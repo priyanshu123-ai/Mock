@@ -20,7 +20,7 @@ const index = () => {
   return (
    <Stack.Navigator>
     <Stack.Screen name='Home' component={Home} options={{headerShown:false}}/>
-    <Stack.Screen name='Library' component={Library}/>
+    <Stack.Screen name='Library' component={Library} options={{headerShown:false}}/>
     <Stack.Screen name='Playlists' component={Playlists}/>
 
     <Stack.Screen name='Profile' component={Profile}/>
