@@ -6,6 +6,25 @@ import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 
 import img from "../assets/images/img.png";
 
+const playlists = [
+  {
+    title: "Chronic Pain",
+    episodes: "8 episodes",
+    image: "https://rlv.zcache.com/chronic_pain_awareness_ribbon_custom_art_pin-r821efa4b4d914c95b7f0458089dba04a_k94rk_1024.jpg?rlvnet=1&max_dim=325",
+  },
+  {
+    title: "Mindfulness for Sleep",
+    episodes: "8 episodes",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm2CjoRYug3FBGXSVkI4PbX0fr8DdjVYhI6g&s",
+  },
+  {
+    title: "Healthy Heart Basics",
+    episodes: "12 episodes",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrwMiHNKTODhHacgDHglMNkLv4TXwN117gQA&s",
+  },
+];
+
+
 const Medical = () => {
   return (
     <SafeAreaView style={styles.bigbox}>
@@ -71,25 +90,20 @@ const Medical = () => {
           <Text style={styles.see}>See all</Text>
         </View>
 
-        {["Chronic Pain", "Mindfulness for Sleep", "Health Heart Basics"].map(
-          (item, i) => (
-            <View key={i} style={styles.playlistCard}>
-              <Image
-                style={styles.playlistImage}
-                source={{
-                  uri: "https://rlv.zcache.com/chronic_pain_awareness_ribbon_custom_art_pin-r821efa4b4d914c95b7f0458089dba04a_k94rk_1024.jpg?rlvnet=1&max_dim=325",
-                }}
-              />
-              <View style={styles.playlistInfo}>
-                <Text style={styles.playlistTitle}>{item}</Text>
-                <Text style={styles.playlistEpisodes}>
-                  {i === 2 ? "12 episodes" : "8 episodes"}
-                </Text>
-              </View>
-              <FontAwesome5 name="angle-right" size={22} color="#333" />
-            </View>
-          )
-        )}
+       {playlists.map((item, i) => (
+  <View key={i} style={styles.playlistCard}>
+    <Image
+      style={styles.playlistImage}
+      source={{ uri: item.image }}
+    />
+    <View style={styles.playlistInfo}>
+      <Text style={styles.playlistTitle}>{item.title}</Text>
+      <Text style={styles.playlistEpisodes}>{item.episodes}</Text>
+    </View>
+    <FontAwesome5 name="angle-right" size={22} color="#333" />
+  </View>
+))}
+
       </View>
     </SafeAreaView>
   );
