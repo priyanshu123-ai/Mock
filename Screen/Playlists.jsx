@@ -1,14 +1,24 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Button, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const Playlists = () => {
   return (
-    <View>
-      <Text>Playlists</Text>
-    </View>
+    <SafeAreaView style={styles.cont}>
+       <Button title='Playlist'></Button>
+    </SafeAreaView>
   )
 }
 
 export default Playlists
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    cont:{
+        flex:1,
+        flexDirection:'column',
+        justifyContent:'center',
+        alignContent:'center',
+        alignItems:'center'
+
+    }
+})
